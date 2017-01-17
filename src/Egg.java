@@ -1,19 +1,29 @@
 public class Egg
 {
-    private int nutrition;
     private double hatchTime;
-    private Hitbox box;
     private Point pos;
-    private int xlocation, ylocation, length, width;
+    private boolean parent;
 
     /**
      * Constructor for objects of class Egg
      */
-    public Egg(int nutrition, double hatchTime, Point pos)
+    public Egg(double hatchTime, Point pos, boolean parent)
     {
-        this.nutrition = nutrition;
         this.hatchTime = hatchTime;
         this.pos = pos;
-        box = new Hitbox(pos.x - 1, pos.y - 1, 3, 3);
+        this.parent = parent;
+    }
+    
+    public void hatch(int i){
+        if (parent){
+            drawArea.eggs.remove(i);
+            Carnivore baby = new Carnivore(1, /*angle, speed, eggTime, evolutionRate,*/pos);
+            drawArea.carnivores.add(baby);
+        }
+        else{
+            drawArea.eggs.remove(i);
+            Herbivore baby = new Herbivore(1, /*angle, speed, eggTime, evolutionRate,*/pos);
+            drawArea.herbivores.add(baby);
+        }
     }
 }
