@@ -9,4 +9,13 @@ public class Food
         this.pos = pos;
         box = new Hitbox(pos.x - 1, pos.y - 1, 3, 3);
     }
+
+    public Point getPos(){
+        return pos;
+    }
+    
+    public void remove (int i){
+        drawArea.food.remove(i);
+    }
 }
+
