@@ -4,16 +4,15 @@ public abstract class Organism
     private Hitbox hitbox;
     private Point pos;
     private int size;
-    private double angle;
+    private double angle, speed;
     private double eggTime, evolutionRate;
-    private boolean living, diet;
-    public Organism(int size, double angle, double eggTime, double evolutionRate, boolean living, Point pos)
+    public Organism(int size, double angle, double speed, double eggTime, double evolutionRate, Point pos)
     {
         this.size = size;
         this.angle = angle;
+        this.speed = speed;
         this.eggTime = eggTime;
         this.evolutionRate = evolutionRate;
-        this.living = living;
         this.pos = pos;
     }
     
@@ -26,15 +25,15 @@ public abstract class Organism
     }
     
     abstract void eat(){
-        
     }
     
-    abstract void egg(){
+    abstract Egg placeEgg(Point pos){
     }
 
     abstract void evolve(){
     }
-  
-    abstract void hitBoxCheck(Rectangle rec2){
+    
+    abstract void die(){
     }
 }
+
