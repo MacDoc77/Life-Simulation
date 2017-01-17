@@ -1,3 +1,10 @@
+
+/**
+ * Write a description of class Carnivore here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 public class Carnivore extends Organism
 {
     private Hitbox box;
@@ -11,28 +18,29 @@ public class Carnivore extends Organism
         return box;
     }
     
-    public void eat(Herbivore org2){
-        if (size >= org2.getSize())
-            //eats organism
-        else{
-        }
-            //thing passes through, doesn't eat
+    public void eat(Herbivore org2, int i){
+        org2.die(i);
     }
     
-    public void eat (Food food){
-        
+    public void eat (Food food, int i){
+        food.remove(i);
     }
     
-    public void eat (Egg egg){
-    }
-    
-    public void egg(){
+    public Egg placeEgg(Point pos){
+        return new Egg (/*hatchtime variable*/, pos);
     }
     
     public void evolve(){
     }
     
     public boolean hitBoxCheck(Rectangle rec2){
-        if 
+        if ((box.getBox).intersects(rec2))
+            return true;
+        else 
+            return false;
+    }
+    
+    public void die(int i){
+        drawArea.carnivores.remove(i);
     }
 }
