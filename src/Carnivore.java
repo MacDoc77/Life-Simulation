@@ -1,4 +1,5 @@
 
+
 /**
  * Write a description of class Carnivore here.
  * 
@@ -8,9 +9,9 @@
 public class Carnivore extends Organism
 {
     private Hitbox box;
-    public Carnivore(int size, double angle, double eggTime, double evolutionRate, boolean living, Point pos)
+    public Carnivore(int size, double angle, double speed, double eggTime, double evolutionRate, Point pos)
     {
-        super(size, angle, eggTime, evolutionRate, living, pos);
+        super(size, angle, speed, eggTime, evolutionRate, pos);
         box = new Hitbox(pos.x - 4, pos.y - 4, 8, 8);
     }
 
